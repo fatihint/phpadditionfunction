@@ -68,7 +68,8 @@ function Addition($operation){
             for($i=0; $i<$s; $i++){
               while($j<$b){
                 $num1[$j] = $new[$i];
-                $j++;
+                // $j++;
+                $j = $rules[$j][1];
                 break;
               }
             }
@@ -85,7 +86,8 @@ function Addition($operation){
             for($i=0; $i<$s; $i++){
               while($j<$b){
                 $num2[$j] = $new[$i];
-                $j++;
+                // $j++;
+                $j = $rules[$j][1];
                 break;
               }
             }
@@ -116,7 +118,8 @@ function Addition($operation){
                   // elde eklendigi icin tekrar 0'a esitlendi.
                   $elde = 0;
                   // 110. satirdan gelen yeni elde tekrar alindi.
-                  $elde++;
+                  // $elde++;
+                  $elde = $rules[$elde][1];
                 } else{
                   // 110. satirdaki kosul saglanmadigi icin sonuc n degiskenine alinir
                   $n = $rules[$num1[$i]][$num2[$i]];
@@ -127,7 +130,8 @@ function Addition($operation){
                     if(array_keys($rules[$n], $rules[$n][$elde])[0] > array_keys($rules[$n],9)[0]) {
                         $answer[] = $rules[$n][$elde];
                         $elde = 0;
-                        $elde++;
+                        // $elde++;
+                        $elde = $rules[$elde][1];
                     } else {
                       // n degiskeni ve eldenin toplami 9dan buyuk degil
                       $answer[] = $rules[$n][$elde];
@@ -160,7 +164,8 @@ function Addition($operation){
             if($i != 0){
               if(array_keys($rules[$num1[$i]], $rules[$num1[$i]][$num2[$i]])[0] > array_keys($rules[$num1[$i]],9)[0]){
                 $answer[] = $rules[$num1[$i]][$num2[$i]];
-                $elde++;
+                // $elde++;
+                $elde = $rules[$elde][1];
               } else {
                 $answer[] = $rules[$num1[$i]][$num2[$i]];
                 $elde = 0;
