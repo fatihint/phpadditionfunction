@@ -1,18 +1,9 @@
-<h1>Welcome to the addition calculator Version 1.0.0</h1>
-
-<p><i>We are taking some numbers from you.</i></p>
-<p><i>We are giving the sum back to you within seconds !</i></p>
-
-<p>Get start now by writing numbers !</p>
-
 <form method="POST">
 <input type="text" name="numbers" placeholder="toplamak istediginiz sayilari aralarina + isareti koyarak yaziniz." style="width: 400px">
 </br>
 </br>
 <input type="submit" name="islem" value="Bu islemin cevabi">
-<input type="submit" name="hersey" value="Herseyin cevabi">
 </form> </br></br>
-
 
 <?php
 function Addition($operation){
@@ -199,7 +190,5 @@ if(isset($_POST["islem"])){
   else
       echo "en az 2 sayi girmelisiniz !";
 }
-if(isset($_POST["hersey"])){
-?> <h1><?php echo 42; ?></h1> <?php
-}
+
 ?>
